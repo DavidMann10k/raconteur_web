@@ -10,13 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_27_214627) do
+ActiveRecord::Schema.define(version: 2019_02_28_050555) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "jwt_blacklists", force: :cascade do |t|
     t.string "jti", null: false
+    t.datetime "exp"
     t.index ["jti"], name: "index_jwt_blacklists_on_jti"
   end
 
